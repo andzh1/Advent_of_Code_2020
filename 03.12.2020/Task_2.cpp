@@ -1,10 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-const int fileLength = 323;
+typedef string inputType;
 
-int counterOfTrees(string input[], int down, int right){
+int counterOfTrees(vector <string> input, int down, int right){
     int length = input[0].length();
+    int fileLength = input.size();
     int counter = 0, y = 0, x = 0;
     while(y < fileLength){
         if(input[y][x % length] == '#') counter ++;
@@ -16,8 +17,10 @@ int counterOfTrees(string input[], int down, int right){
 }
 
 int main(){
-    string input[fileLength];
-    for(int i = 0; i < fileLength; i++) cin >> input[i];
+    freopen("Puzzle_Input.txt", "r", stdin);
+    vector <inputType> input;
+    inputType s;
+    while(cin >> s) input.push_back(s);
     long long counter = 1;
     counter *= counterOfTrees(input, 1, 1);
     counter *= counterOfTrees(input, 1, 3);
