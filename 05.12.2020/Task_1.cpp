@@ -2,10 +2,7 @@
 using namespace std;
 
 bool charDecoder(char ch){
-    if(ch == 'B') return true;
-    if(ch == 'F') return false;
-    if(ch == 'R') return true;
-    if(ch == 'L') return false;
+    return (ch == 'B' || ch == 'R');
 }
 
 int decoder(string input){
