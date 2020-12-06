@@ -1,16 +1,16 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int solution(vector <string> input)
+int countAnswers(vector <string> input)
 {
-    int array[26];
-    for(int i = 0; i < 26; i++) array[i] = 0;
+    int numbersOfLetters[26];
+    for(int i = 0; i < 26; i++) numbersOfLetters[i] = 0;
     for(auto s: input){
-        for(int i = 0; i < s.length(); i++) array[s[i] - 'a'] ++;
+        for(int i = 0; i < s.length(); i++) numbersOfLetters[s[i] - 'a'] ++;
     }
     int counter = 0;
     for(int i = 0; i < 26; i++) {
-        if(array[i] == input.size()) counter ++;
+        if(numbersOfLetters[i] == input.size()) counter ++;
     }
     return counter;
 }
@@ -18,16 +18,16 @@ int solution(vector <string> input)
 int main(){
     freopen("Puzzle_Input.txt", "r", stdin);
     string s;
-    int summ = 0, cursum = 0;
+    int answer = 0;
     vector <string> input;
     while(getline(cin, s)){
         if(s.length() == 0){
-            summ += solution(input);
+            answer += countAnswers(input);
             input.clear();
         }
         else {
             input.push_back(s);
         }
     }
-    cout << summ;
+    cout << answer;
 }
