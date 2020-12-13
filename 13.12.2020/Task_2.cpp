@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/* BE CAREFULL!
+/* BE CAREFUL!
 This solution is, in my opinion, one of the worst possible solutions of this problem :-) */
 
 int main(){
